@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "projeto-solar"
+version = "0.1.0"
+description = "Um projeto para calcular e visualizar sistemas de energia solar."
+authors = ["Seu Nome <seuemail@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.21.0"
+matplotlib = "^3.4.0"
+requests = "^2.25.1"
+geopy = "^2.2.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

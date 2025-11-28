@@ -1,0 +1,6 @@
+cidade,consumo_medio,taxa_minima,financiar,taxa_juros,meses
+Macapa, 300, 30, sim, 5, 24
+Belem, 450, 50, nao, , 
+Rio de Janeiro, 600, 100, sim, 7, 36
+Sao Paulo, 500, 50, sim, 6, 12
+Curitiba, 400, 30, nao, , 
