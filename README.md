@@ -1,50 +1,76 @@
-# Projeto Solar
+# ☀️ SolarMaster Pro: Sistema Inteligente de Engenharia Fotovoltaica
 
-Este projeto é uma aplicação para o dimensionamento e análise de sistemas de energia solar. Ele permite que os usuários insiram dados sobre consumo de energia e localização geográfica, e fornece estimativas de custo, dimensionamento do sistema e visualizações dos resultados.
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
+![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Estrutura do Projeto
+## 📖 Sobre o Projeto
 
-O projeto é organizado da seguinte forma:
+O **SolarMaster Pro** é uma aplicação avançada para dimensionamento técnico e análise de viabilidade financeira de sistemas de energia solar.
 
-- **src/**: Contém os módulos principais da aplicação.
-  - **__init__.py**: Torna o diretório um pacote Python.
-  - **main.py**: Ponto de entrada da aplicação.
-  - **geodata.py**: Funções para obter dados geográficos e climáticos.
-  - **engineering.py**: Funções para cálculos de engenharia e relatórios técnicos.
-  - **finance.py**: Funções para cálculos financeiros e simulações.
-  - **viz.py**: Funções para visualização de dados e geração de gráficos.
+Diferente de calculadoras simples, este software integra **Dados Climáticos da NASA**, **Geolocalização Automática** e **Matemática Financeira** (adaptada à Lei 14.300) para gerar propostas comerciais precisas e seguras. O objetivo é eliminar o "achismo" no dimensionamento solar, entregando segurança técnica e clareza financeira.
 
-- **notebooks/**: Contém um notebook Jupyter para execução interativa do projeto.
-  - **projeto_solar.ipynb**: Implementação interativa do projeto.
+---
 
-- **data/**: Contém dados utilizados no projeto.
-  - **sample_inputs.csv**: Dados de entrada de exemplo.
-  - **README.md**: Informações sobre os dados utilizados.
+## 🚀 Funcionalidades Principais
 
-- **tests/**: Contém testes automatizados para garantir a funcionalidade do projeto.
-  - **test_engineering.py**: Testes para o módulo de engenharia.
-  - **test_finance.py**: Testes para o módulo financeiro.
+* **📍 Inteligência Geográfica:** Localização automática da cidade e coleta de dados de Irradiação Solar e Temperatura via API da NASA POWER.
+* **⚡ Engenharia de Detalhe:** Gera um "Datasheet" automático, especificando:
+    * Quantidade de módulos e potência do inversor (com Overloading).
+    * Área de telhado necessária e carga estática (peso).
+    * Dimensionamento de cabos elétricos e disjuntores de proteção.
+* **💰 Análise Financeira "Blindada":**
+    * Cálculo de Payback, VPL e Economia Acumulada.
+    * Considera a **Lei 14.300** (Taxação do Fio B) e Taxa Mínima de Disponibilidade.
+    * Simula cenários de Inflação Energética e Financiamento Bancário.
+* **📊 Dashboards Visuais:** Geração de relatórios gráficos (Matplotlib) salvos automaticamente em alta resolução.
 
-- **requirements.txt**: Lista de dependências do projeto.
+---
 
-- **pyproject.toml**: Configurações do projeto.
+## 📂 Estrutura do Projeto
 
-- **.gitignore**: Arquivos e diretórios a serem ignorados pelo Git.
+A arquitetura foi pensada de forma modular para facilitar a manutenção e escalabilidade:
 
-## Instalação
+- **src/**: Núcleo da aplicação (Código Fonte).
+  - **main.py**: Orquestrador principal. Recebe inputs e chama os módulos.
+  - **geodata.py**: Conexão com APIs externas (Nominatim/NASA).
+  - **engineering.py**: Motor de cálculo físico (Dimensionamento, Cabos, Estrutura).
+  - **finance.py**: Motor matemático (Fluxo de caixa, Inflação, Financiamento).
+  - **viz.py**: Motor gráfico (Geração dos Dashboards e imagens).
 
-Para instalar as dependências do projeto, execute:
+- **notebooks/**: Ambiente de testes e prototipagem.
+  - **projeto_solar.ipynb**: Versão interativa usada para desenvolvimento exploratório.
 
-```
-pip install -r requirements.txt
-```
+- **data/**: Armazenamento de arquivos auxiliares.
+  - **sample_inputs.csv**: Planilha para testes em lote (batch).
 
-## Uso
+- **tests/**: Controle de qualidade (QA).
+  - **test_engineering.py**: Validação dos cálculos de dimensionamento.
+  - **test_finance.py**: Validação das fórmulas financeiras.
 
-Para executar a aplicação, utilize o seguinte comando:
+---
 
-```
+## 📦 Instalação e Requisitos
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/solar-master.git](https://github.com/seu-usuario/solar-master.git)
+    cd solar-master
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(Principais libs: numpy, matplotlib, requests, geopy)*
+
+---
+
+## ▶️ Como Usar
+
+Execute o arquivo principal através do terminal:
+
+```bash
 python src/main.py
-```
 
 Siga as instruções na tela para inserir os dados necessários e obter os resultados.

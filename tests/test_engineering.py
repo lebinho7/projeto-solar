@@ -1,3 +1,25 @@
+import numpy as np
+from src.engineering import calcular_tudo
+
+
+def test_calcular_tudo_shapes():
+    irr = {m: 5.0 for m in ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']}
+    temp = {m: 26.0 for m in ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']}
+
+    qtd, pot, capex, parc, ant, novo, saldo, tot_sem, tot_com = calcular_tudo(
+        consumo_kwh_mes=300.0,
+        taxa_min_kwh=50,
+        irr_mensal=irr,
+        temp_mensal=temp,
+        financiar=False,
+        fin_dados=None,
+    )
+
+    assert isinstance(qtd, int) and qtd > 0
+    assert isinstance(pot, (int, float)) and pot > 0
+    assert isinstance(capex, float) and capex > 0
+    assert len(ant) == 300 and len(novo) == 300 and len(saldo) == 300
+    assert isinstance(tot_sem, float) and isinstance(tot_com, float)
 import pytest
 from src.engineering import calcular_tudo, imprimir_relatorio_tecnico
 

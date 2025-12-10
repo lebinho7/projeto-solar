@@ -1,9 +1,8 @@
 import numpy as np
-import pandas as pd
-from geodata import get_data
-from engineering import calcular_tudo, imprimir_relatorio_tecnico
-from finance import calcular_financiamento
-from viz import plotar_dashboard_final
+from .geodata import get_data
+from .engineering import calcular_tudo, imprimir_relatorio_tecnico
+# from .finance import calcular_financiamento  # (não utilizado no fluxo atual)
+from .viz import plotar_dashboard_final
 
 def main():
     print("\n=== ☀️ SISTEMA SOLAR V11 (HÍBRIDO) ☀️ ===")
