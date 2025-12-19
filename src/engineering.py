@@ -2,6 +2,7 @@ import numpy as np
 from math import ceil
 from . import config
 import logging
+logger = logging.getLogger(__name__)
 
 # Parâmetros básicos de hardware usados nos cálculos
 DB_HARDWARE = {
@@ -23,7 +24,7 @@ def imprimir_relatorio_tecnico(qtd, pot_inv_w):
     print("\n" + "=" * 60)
     print("🛠️  RELATÓRIO TÉCNICO DE ENGENHARIA (ESTRUTURA & ELÉTRICA)  🛠️")
     print("=" * 60)
-    logging.info("Engenharia: qtd_modulos=%s, inversor_w=%s, area_m2=%.2f, peso_kg=%.0f", qtd, pot_inv_w, area, peso)
+    logger.info("Engenharia: qtd_modulos=%s, inversor_w=%s, area_m2=%.2f, peso_kg=%.0f", qtd, pot_inv_w, area, peso)
     print(f"🏗️  ESTRUTURA E TELHADO:")
     print(f"    • Área Necessária: {area:.1f} m² (Livre de sombras)")
     print(f"    • Peso Total (Carga): {peso:.0f} kg")

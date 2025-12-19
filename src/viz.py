@@ -35,7 +35,7 @@ import os
 import logging
 from datetime import datetime
 
-def plotar_dashboard_final(cidade, sistema_wp, conta_antiga, custo_novo, saldo, total_sem, total_com, parc, financiado, show=True):
+def plotar_dashboard_final(cidade, sistema_wp, conta_antiga, custo_novo, saldo, total_sem, total_com, parc, financiado, show=True, out_dir=None):
     plt.rcParams['text.color'] = '#333333'
     fig = plt.figure(figsize=(16, 10), facecolor='#F9F9F9')
     gs = fig.add_gridspec(3, 2, height_ratios=[0.15, 1, 1])
@@ -88,7 +88,7 @@ def plotar_dashboard_final(cidade, sistema_wp, conta_antiga, custo_novo, saldo, 
 
     plt.tight_layout()
     # Salvar PNG em reports/ com timestamp
-    out_dir = os.path.join(os.getcwd(), "reports")
+    out_dir = out_dir or os.path.join(os.getcwd(), "reports")
     try:
         os.makedirs(out_dir, exist_ok=True)
     except Exception:
